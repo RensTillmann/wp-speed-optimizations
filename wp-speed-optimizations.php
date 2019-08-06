@@ -1,4 +1,12 @@
 /**
+ * Plugin Name: WP Speed Optimizations
+ * Description: WP Speed Optimizations
+ * Version: 1.0.0
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+/**
  * Remove WP embed script
  */
 function speed_stop_loading_wp_embed() {
