@@ -1,3 +1,4 @@
+<?php
 /**
  * Plugin Name: WP Speed Optimizations
  * Description: WP Speed Optimizations
