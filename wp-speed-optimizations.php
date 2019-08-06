@@ -1,8 +1,20 @@
 /**
+ * Remove Query Strings from Static Resources
+ */
+function _remove_script_version( $src ){
+    $parts = explode( '?ver', $src );
+    return $parts[0];
+}
+add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
+
+
+/**
  * Only keep 3 revisions, and increase the auto save interval
  */
 define('AUTOSAVE_INTERVAL', 300); // seconds
 define('WP_POST_REVISIONS', 3);
+
 
 /**
  * Disable the emoji's
