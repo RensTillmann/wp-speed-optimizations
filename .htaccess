@@ -1,3 +1,9 @@
+# Disable Hotlinking
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourdomain.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
+
 # Add Expire Headers to WordPress
 <IfModule mod_expires.c>
     # Enable expirations
