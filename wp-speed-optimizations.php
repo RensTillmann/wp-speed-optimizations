@@ -1,4 +1,25 @@
 /**
+ * Remove WP embed script
+ */
+function speed_stop_loading_wp_embed() {
+    if (!is_admin()) {
+        wp_deregister_script('wp-embed');
+    }
+}
+add_action('init', 'speed_stop_loading_wp_embed');
+
+
+/**
+ * Remove comment-reply.min.js from footer
+ */
+function comments_clean_header_hook(){
+    wp_deregister_script( 'comment-reply' );
+}
+
+add_action('init','comments_clean_header_hook');
+
+
+/**
  * Remove Query Strings from Static Resources
  */
 function _remove_script_version( $src ){
